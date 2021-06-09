@@ -1,0 +1,51 @@
+<div class="burnerWrapper" style="background:white; position: fixed;
+top: 0;
+width: 100%;  z-index: 9999">
+    <div class="atts-container">
+      <div class="logo">
+          <img src="assets/img/atts1 (002).png" alt="">
+      </div>
+      <div class="burner"><h1><br></h1><h1>Student Complain System</h1></div>
+  </div>
+</div>
+
+<app-header [navbarBrandRouterLink]="['/dashboard']" [fixed]="true" [navbarBrandHref]="{text:'ATTS'}"
+  [navbarBrandMinimized]="{text:'ATTS'} " [sidebarToggler]="'lg'" style="margin-top: 12vh;">
+
+  <ul class="nav navbar-nav hidden-sm-down ml-auto">
+
+    <li class="nav-item">
+      <span class="badge badge-pill badge-success"><a class="nav-link"
+          href="assets/ATTS Civilian/OpenMe.html" target="_blank"
+          style="color: white;font-size:medium; margin: 0.1em;">Help</a></span>
+    </li>
+
+    <li class="nav-item">
+      <span class="badge badge-pill badge-success"><a class="nav-link"
+          href="http://cit.eservices.gov.za/tonkana/login/home.jsf"
+          style="color: white;font-size:medium;  margin: 0.1em;">Logout</a></span>
+    </li>
+  </ul>
+
+</app-header>
+<div class="app-body">
+  <app-sidebar [fixed]="true" [display]="'lg'">
+    <app-sidebar-nav [navItems]="navItems" [perfectScrollbar] [disabled]="sidebarMinimized"></app-sidebar-nav>
+    <app-sidebar-minimizer></app-sidebar-minimizer>
+  </app-sidebar>
+  <!-- Main content -->
+  <main class="main" style="background-color: lightgray;">
+    <cui-breadcrumb>
+
+    </cui-breadcrumb>
+
+    <div class="container-fluid">
+      <app-loading></app-loading>
+      <router-outlet></router-outlet>
+    </div>
+  </main>
+
+</div>
+<app-footer>
+  <span><a href="http://www.sita.co.za/">TUT</a> &copy; 2020 power by TUT.</span>
+</app-footer>

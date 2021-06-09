@@ -1,0 +1,71 @@
+// Here you can add other styles
+@import "./reset";
+@import "./variables";
+
+button {
+    margin: 2px !important;
+    padding: 0.2em 0.5em !important;
+    min-width: 100px !important;
+    font-size: 1rem !important;
+  
+  }
+
+.btn + .btn {
+  margin-left: 5px !important;
+  @media(max-width: 500px) {
+    margin-left: 0px  !important;
+    margin-top: 5px !important;
+  }
+}
+
+  .btn-primary {
+    background-color: $primary !important;
+  
+    :hover {
+      color: black !important;
+    }
+  }
+  
+  .btn-warning {
+    background-color: $warning !important;
+  
+    :hover {
+      color: white !important;
+    }
+  }
+  
+  .btn-success {
+    background-color: $success !important;
+  
+    :hover {
+      color: black !important;
+    }
+  
+  }
+  .btn-danger {
+    background-color: $delete !important;
+  
+    :hover {
+      color: black !important;
+    }
+  }
+  
+  .btn-view {
+    color: $primary !important;
+  }
+  
+  .btn-edit {
+    color: $warning !important;
+  }
+  
+  .btn-delete {
+    color: $delete !important;
+  }
+  
+  .btn-flex-right {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+  
+  

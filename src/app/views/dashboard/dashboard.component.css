@@ -1,0 +1,11 @@
+.container {
+  width: 100%;
+  padding: 0;
+  background: red;
+  border-radius: 5px;
+}
+
+body {
+  background: blue;
+}
+/*# sourceMappingURL=dashboard.component.css.map */

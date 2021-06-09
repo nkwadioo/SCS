@@ -1,0 +1,14 @@
+<div>
+  <!-- <h2 mat-dialog-title>
+   <strong>Continue</strong>
+  </h2> -->
+  <hr>
+  <mat-dialog-content>
+    <strong>{{quit.message}}</strong>
+  </mat-dialog-content>
+  <hr>
+  <mat-dialog-actions>
+    <button mat-flat-button id="confirm-button" [mat-dialog-close]='true'>Continue</button>
+    <button mat-flat-button id="cancel-button" [mat-dialog-close]='false'>Cancel</button>
+  </mat-dialog-actions>
+</div>

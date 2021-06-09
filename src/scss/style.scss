@@ -1,0 +1,453 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$ng-primary: mat-palette($mat-indigo);
+$ng-accent: mat-palette($mat-pink, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$ng-warn: mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$ng-theme: mat-light-theme($ng-primary, $ng-accent, $ng-warn);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($ng-theme);
+
+// Import styles
+@import "~@coreui/coreui/scss/coreui";
+
+// If you want to add something do it here
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "~font-awesome/css/font-awesome.css";
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+@import "./custom";
+
+:disabled {
+  color: rgb(17, 16, 16) !important;
+}
+
+#mycover {
+  height: calc(100vh - 230px);
+  background: url(assets/images/IMG-20190816-WA0006.jpg) center;
+  background-size: cover;
+  display: block;
+  color: white;
+}
+
+.wall-sticker {
+  background: rgba(0, 0, 0, 0);
+  padding: 8rem 3rem 16rem 0rem;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 1rem;
+}
+
+.container-wrapper {
+  background-color: white !important;
+  padding-top: 30px !important;
+  padding-bottom: 30px !important;
+
+}
+
+.moto {
+  background: rgba(0, 0, 0, 0.005);
+  font-size: 2rem;
+  margin-top: 150px;
+  margin-left: 450px;
+  text-align: center;
+  color: rgba(19, 128, 36, 1);
+}
+
+
+// form {
+//   min-width: 150px;
+//   max-width: 500px;
+//   width: 100%;
+// }
+
+.width100 {
+  width: 100%;
+}
+
+.white-board {
+  background-color: white;
+  padding: 2rem;
+  // height: fit-content;
+}
+
+.ATTS-full-width {
+  width: 100%;
+  padding-right: 0.3rem;
+}
+
+
+.mat-radio-button~.mat-radio-button {
+  margin-left: 1rem;
+}
+
+.ATTS-radio-group {
+  display: flex;
+  /* flex-direction: column; */
+  margin: 15px 0;
+}
+
+.ATTS-radio-group-label {
+  padding-right: 20px;
+}
+
+
+.my-container {
+  width: 100%;
+  // padding: 30px;
+}
+
+table {
+  width: 100%;
+}
+
+th,
+td {
+  padding-right: 10px !important;
+}
+
+.full-width {
+  width: 100%;
+}
+
+th.mat-sort-header-sorted {
+  background-color: black;
+}
+
+tr:hover {
+  background: #f5f5f5
+}
+
+tr:active {
+  background: #efefef
+}
+
+h2 {
+  text-align: center;
+}
+
+.confirm-dialog-container #confirm-button {
+  margin-right: 3px;
+  height: 50px;
+  width: 49%;
+  background-color: #256e0f;
+  color: white;
+}
+
+.mat-focused .mat-form-field-label {
+  color: green !important;
+  font-size: 1rem;
+}
+
+.confirm-dialog-container #alert-button {
+  height: 50px;
+  width: 100%;
+  background-color: #256e0f;
+  color: white;
+}
+
+// animations
+@import url(https://fonts.googleapis.com/css?family=Cutive+Mono);
+
+.load-wrapp {
+  float: left;
+  height: 100px;
+  padding: 20px 20px 20px;
+  border-radius: 5px;
+  text-align: center;
+  width: 100%;
+  padding-top: 0;
+
+  .spinner {
+    position: relative;
+    width: 45px;
+    height: 45px;
+    margin: 0 auto;
+
+
+  }
+
+  .bubble-1,
+  .bubble-2 {
+    position: absolute;
+    top: 0;
+    width: 25px;
+    height: 25px;
+    border-radius: 100%;
+    background-color: #4b9cdb;
+  }
+
+  .bubble-2 {
+    top: auto;
+    bottom: 0;
+  }
+}
+
+.load-9 .spinner {
+  animation: loadingI 2s linear infinite;
+}
+
+.load-9 .bubble-1,
+.load-9 .bubble-2 {
+  animation: bounce 2s ease-in-out infinite;
+}
+
+.load-9 .bubble-2 {
+  animation-delay: -1.0s;
+}
+
+@keyframes loadingI {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes bounce {
+
+  0%,
+  100% {
+    transform: scale(0.0);
+  }
+
+  50% {
+    transform: scale(1.0);
+  }
+}
+
+$d: 20px;
+$w: 100px;
+$bc: #000;
+$t: 3s;
+
+.loading {
+  background: $bc;
+  transform: translate(-25px, -24px);
+  width: 100vw;
+  height: calc(100vh);
+}
+
+.center {
+  display: inline-block;
+  transform: translate(calc(-134% + 50vw), calc(-100% + 50vh));
+  filter: contrast(3);
+  width: 200px;
+}
+
+.loader {
+  background: $bc;
+  font-size: 0;
+  padding: 60px;
+  text-align: center;
+  position: relative;
+  width: 200px;
+}
+
+.text {
+  animation: b ($t / 2) infinite;
+  color: #2ff;
+  font-size: 24px;
+  font-family: 'Cutive Mono', ;
+  line-height: 145px;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: 0;
+}
+
+.dot {
+  border-radius: $d / 2;
+  display: inline-block;
+  filter: blur(10px);
+  height: $d;
+  width: $d;
+
+  &:first-child {
+    animation: fc $t ease infinite;
+    float: left;
+  }
+
+  &:last-child {
+    animation: lc $t ease infinite;
+    margin-left: -$d;
+  }
+}
+
+@keyframes fc {
+  0% {
+    background: #ddf;
+    transform: translate3d(0, 0, 0);
+  }
+
+  25% {
+    background: #1d2;
+  }
+
+  50% {
+    background: #aaf;
+    transform: translate3d($w - $d, 0, 0);
+  }
+
+  100% {
+    background: #ddf;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes lc {
+  0% {
+    background: #3fd;
+  }
+
+  25% {
+    background: #4df;
+  }
+
+  50% {
+    background: #12d;
+  }
+
+  75% {
+    background: #4df;
+  }
+
+  100% {
+    background: #3fd;
+  }
+}
+
+@keyframes b {
+
+  0%,
+  100% {
+    filter: blur(2px);
+  }
+
+  50% {
+    filter: blur(1.5px);
+  }
+}
+
+.atts-container {
+  display: flex !important;
+  flex-direction: row !important;
+  height: 12vh !important;
+  // background-color: cadetblue;
+  width: 100vw !important;
+  font-family: Arial, Helvetica, sans-serif;
+
+  .logo {
+    width: 10vw !important;
+    height: 100% !important;
+    padding: 15px 2px;
+
+    img {
+      width: 100% !important;
+      height: 100% !important;
+      // padding: 1px;
+    }
+  }
+
+  .burner {
+    display: flex !important;
+    flex-direction: column !important;
+    align-content: stretch !important;
+    align-items: center !important;
+    color: darken(green, 10) !important;
+    width: 100% !important;
+    height: 12vh !important;
+    margin: 0em !important;
+    line-height: 1px !important;
+    background: url(assets/images/clouds1.jpg) center center !important;
+    background-size: cover !important;
+    clip-path: polygon(33% 0, 66% 0, 100% 0, 100% 99%, 17% 99%, 4% 0) !important;
+
+    // h1 {
+    //   font-size: 2em !important;
+    // }
+
+    // h2 {
+    //   font-size: 1.5em !important;
+    // }
+
+  }
+}
+
+// @media(max-width: 1420px) {
+//   .atts-container {
+
+//     .logo {
+//       display: none !important;
+//     }
+
+//     .burner {
+//       width: 100vw !important;
+
+//       h1 {
+//         font-size: 2em !important;
+//       }
+
+//       h2 {
+//         font-size: 1.2em !important;
+//       }
+
+//       clip-path: polygon(0 0, 100% 0, 100% 98%, 75% 100%, 14% 100%, 0% 50%) !important;
+//     }
+//   }
+// }
+
+@media(max-width: 500px) {
+//   .showcase {
+//     flex-direction: column !important;
+
+//     .header {
+//       font-size: 1.5em;
+//     }
+
+//     .subheader {
+//       font-size: 0.8em;
+//       color: rgb(247, 224, 183);
+//     }
+
+//     p {
+//       font-size: 0.5em;
+//     }
+
+//     button {
+//       font-size: 0.5em;
+//     }
+//   }
+
+    .logo {
+      display: none !important;
+    }
+
+
+  .btn-flex-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    button {
+      width: 100% !important;
+    }
+  }
+
+//   p {
+//     font-size: 0.8rem;
+//   }
+}
