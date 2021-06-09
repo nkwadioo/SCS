@@ -12,7 +12,7 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        redirectTo: 'Complain'
+        redirectTo: 'complain'
       },
       {
         path: 'Complain',

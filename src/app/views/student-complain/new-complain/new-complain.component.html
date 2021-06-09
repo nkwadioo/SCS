@@ -1,3 +1,18 @@
-<p>
-  new-complain works!
-</p>
+<mat-horizontal-stepper linear #stepper="matHorizontalStepper">
+  <mat-step [stepControl]="studentForm">
+    <ng-template matStepLabel>
+      <span [ngStyle]="{'color': isStudentValid ? 'black' : 'red'}">Student Information</span>
+    </ng-template>
+    <app-student-information (sendStudentState)="getComplainStatus($event)" (sendStudentState)="getFormStatus($event)" #firstForm>
+    </app-student-information>
+  </mat-step>
+
+  <mat-step [stepControl]="complainForm">
+    <ng-template matStepLabel>
+      <span [ngStyle]="{'color': isComplainValid ? 'black' : 'red'}">Complain Information</span>
+    </ng-template>
+    <app-complain-information (sendPersonalState)="getFormStatus($event)"></app-complain-information>
+  </mat-step>
+
+
+

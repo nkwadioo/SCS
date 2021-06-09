@@ -1,0 +1,62 @@
+<!-- <div class="my-container white-board"> -->
+
+  <form [formGroup]="complainInfor">
+    <h4>Complain Information</h4>
+    <div class="form-row">
+        <mat-form-field class="example-full-width">
+          <mat-label>Residence Number</mat-label>
+          <input matInput name="resNumber" ng-model="complainInfor.resNumber" type="text" maxlength=50
+            placeholder="Res Number" formControlName="resNumber">
+            <mat-error *ngIf="complainInfor['controls']?.resNumber.errors?.required">
+              This field is required
+            </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="form-row">
+        <mat-form-field class="example-full-width">
+          <mat-label>Room Number</mat-label>
+          <input matInput name="roomNumber" ng-model="complainInfor.roomNumber" type="text" maxlength=50
+            placeholder="Room Number" formControlName="roomNumber">
+            <mat-error *ngIf="complainInfor['controls']?.roomNumber.errors?.required">
+              This field is required
+            </mat-error>
+        </mat-form-field>     
+      </div>
+
+      <div class="form-row">
+        <mat-form-field class="example-full-width">
+          <mat-label>Comaplain Type</mat-label>
+          <input matInput name="comaplainType" ng-model="complainInfor.comaplainType" type="text" maxlength=50
+            placeholder="Comaplain Type" formControlName="comaplainType">
+            <mat-error *ngIf="complainInfor['controls']?.comaplainType.errors?.required">
+              This field is required
+            </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="form-row">
+        <mat-form-field class="example-full-width">
+          <mat-label>Complain Details</mat-label>
+          <textarea rows="3" matInput placeholder="Complain Details" id='complainDetails'
+            formControlName="complainDetails"></textarea>
+            <mat-error *ngIf="complainInfor['controls']?.complainDetails.errors?.required">
+              This field is required
+            </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="form-row">
+        <label class="image-upload-container btn btn-bwm">
+          <span>Attach Image</span>
+          <input #imageInput type="file" accept="image/*">
+        </label>
+        <br>
+      </div>
+    <br>
+    <div class="example-button-row float-right">
+      <button class="btn" mat-raised-button matStepperPrevious color="primary">Back</button>
+      <button type="submit" class="btn" mat-raised-button color="primary"> Submit Complain</button>
+    </div>
+  </form>
+<!-- </div> -->

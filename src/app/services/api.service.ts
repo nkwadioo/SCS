@@ -39,8 +39,8 @@ export class ApiService {
   };
 
   userID = '';
-  appName = 'Complain';
-  TTAreferencenumber = '';
+  complain = 'Complain';
+  referencenumber = '';
 
 
   constructor(private httpClient: HttpClient, private dialog: DialogsService) {}

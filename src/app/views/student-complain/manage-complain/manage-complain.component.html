@@ -1,3 +1,75 @@
-<p>
-  manage-complain works!
-</p>
+<div class="white-board">
+
+  <h2>Complaints</h2>
+  <br>
+
+  <div class="form-row">
+    <div class="col-12">
+      <div class="table-responsive table-fixed">
+        <table mat-table [dataSource]="dataSource" matSort matSortActive="id" matSortDirection="asc">
+
+          <ng-container matColumnDef="id">
+            <th class="toshrink" mat-header-cell *matHeaderCellDef mat-sort-header disableClear> ID </th>
+            <td class="toshrink" mat-cell *matCellDef="let element"> {{element.id}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="referenceNo">
+            <th class="toshrink" mat-header-cell *matHeaderCellDef mat-sort-header> Reference No </th>
+            <td class="toshrink" mat-cell *matCellDef="let element"> {{element.referenceNo}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="studentNo">
+            <th class="toshrink" mat-header-cell *matHeaderCellDef mat-sort-header> Student No </th>
+            <td class="toshrink" mat-cell *matCellDef="let element"> {{element.studentNo}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="name">
+            <th class="toshrink" mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+            <td class="toshrink" mat-cell *matCellDef="let element"> {{element.name}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="surname">
+            <th class="toshrink" mat-header-cell *matHeaderCellDef mat-sort-header> Surname </th>
+            <td class="toshrink" mat-cell *matCellDef="let element"> {{element.surname}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="dateCreated">
+            <th class="toshrink" mat-header-cell *matHeaderCellDef mat-sort-header> Date Created </th>
+            <td class="toshrink" mat-cell *matCellDef="let element"> {{element.dateCreated}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="status">
+            <th class="toshrink" mat-header-cell *matHeaderCellDef mat-sort-header> Status </th>
+            <td class="toshrink" mat-cell *matCellDef="let element"> {{element.status}} </td>
+          </ng-container>
+
+          <!-- Action Column -->
+          <ng-container matColumnDef="preview">
+            <th class="toshrink" mat-header-cell *matHeaderCellDef mat-sort-header class="icon-header"> Preview </th>
+            <td class="toshrink" mat-cell *matCellDef="let element">
+              <button class="button-btn" mat-icon-button color="primary">
+                <mat-icon class="mat-18 btn-view" matTooltip='View attachment'>visibility</mat-icon>
+                View
+              </button>
+            </td>
+          </ng-container>
+
+          <!-- Action Column -->
+          <ng-container matColumnDef="edit">
+            <th class="toshrink" mat-header-cell *matHeaderCellDef mat-sort-header class="icon-header"> Edit </th>
+            <td class="toshrink" mat-cell *matCellDef="let element">
+              <button class="button-btn" mat-icon-button color="primary">
+                <mat-icon class="mat-18 btn-view" matTooltip='View attachment'>visibility</mat-icon>
+                Edit
+              </button>
+            </td>
+          </ng-container>
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+      </div>
+      <mat-paginator #paginator2="matPaginator" [ngStyle]="{display: isLargeScreen ? 'block' : 'none'}"
+        [pageSize]="pageSize" [pageSizeOptions]="[1, 5, 10]" showFirstLastButtons class="mt-2"></mat-paginator>
+    </div>
+  </div>
+</div>

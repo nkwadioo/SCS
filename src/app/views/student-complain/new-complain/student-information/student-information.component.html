@@ -1,0 +1,86 @@
+<div class="my-container white-board">
+
+  <form [formGroup]="studentInfor">
+    <h4>Student Information</h4>
+    <div class="form-row">
+
+      <div class="col-sm-12">
+        <mat-form-field class="example-full-width">
+          <mat-label>Student Number</mat-label>
+          <input matInput name="studentNumber" ng-model="studentInfor.studentNumber" type="text" maxlength=9 placeholder="Student Number"
+            formControlName="studentNumber">
+            <mat-error *ngIf="studentInfor['controls']?.studentNumber.errors?.required">
+              This field is required
+            </mat-error>
+            <mat-error *ngIf="studentInfor['controls']?.studentNumber.errors?.pattern">
+              {{rgx.numeric().msg}}
+            </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="col-sm-12">
+        <mat-form-field class="example-full-width">
+          <mat-label>Student Name</mat-label>
+          <input matInput name="studentName" ng-model="studentInfor.studentName" type="text" maxlength=50 placeholder="Student Name"
+            formControlName="studentName">
+            <mat-error *ngIf="studentInfor['controls']?.studentName.errors?.required">
+              This field is required
+            </mat-error>
+            <mat-error *ngIf="studentInfor['controls']?.studentName.errors?.pattern">
+              {{rgx.alphabetic().msg}}
+            </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="col-sm-12">
+        <mat-form-field class="example-full-width">
+          <mat-label>Student Surname</mat-label>
+          <input matInput name="studentSurname" ng-model="studentInfor.studentSurname" type="text" maxlength=50 placeholder="Student Surname"
+            formControlName="studentSurname">
+            <mat-error *ngIf="studentInfor['controls']?.studentSurname.errors?.required">
+              This field is required
+            </mat-error>
+            <mat-error *ngIf="studentInfor['controls']?.studentSurname.errors?.pattern">
+              {{rgx.alphabetic().msg}}
+            </mat-error>
+        </mat-form-field>
+     </div>
+
+     <div class="col-sm-12">
+      <mat-form-field class="example-full-width">
+        <mat-label>Cellphone Number</mat-label>
+        <input matInput name="cellphoneNumber" ng-model="studentInfor.cellphoneNumber" type="text" maxlength=10 placeholder="cellphone Number"
+          formControlName="cellphoneNumber">
+          <mat-error *ngIf="studentInfor['controls']?.cellphoneNumber.errors?.required">
+            This field is required
+          </mat-error>
+          <mat-error *ngIf="studentInfor['controls']?.cellphoneNumber.errors?.pattern">
+            {{rgx.tel().msg}}
+          </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="col-sm-12">
+      <mat-form-field class="example-full-width">
+        <mat-label>Email Address</mat-label>
+        <input matInput name="emailAddress" ng-model="studentInfor.emailAddress" type="text" maxlength=50 placeholder="Email Address"
+          formControlName="emailAddress">
+          <mat-error *ngIf="studentInfor['controls']?.emailAddress.errors?.required">
+            This field is required
+          </mat-error>
+          <mat-error *ngIf="studentInfor['controls']?.emailAddress.errors?.pattern">
+            {{rgx.email().msg}}
+          </mat-error>
+      </mat-form-field>
+    </div>
+  
+      <br>
+    </div>
+    <br>
+    <div class="example-button-row float-right">
+      <button type="submit" class="btn" matStepperNext mat-raised-button color="primary" > Next</button>
+    </div>
+    <br>
+  </form>
+  </div>
+  

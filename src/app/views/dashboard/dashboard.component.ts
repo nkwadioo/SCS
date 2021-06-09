@@ -392,7 +392,7 @@ export class DashboardComponent implements OnInit {
       && this.sessions.loggedUser !== undefined) {
         this.loggedUser = `${this.sessions.loggedUser['name']} ${this.sessions.loggedUser['surname']}`;
         clearInterval(log);
-        console.log(JSON.stringify(this.sessions.loggedUser));
+        // console.log(JSON.stringify(this.sessions.loggedUser));
       } else {
         this.loggedUser = '';
       }
