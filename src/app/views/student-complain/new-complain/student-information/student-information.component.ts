@@ -67,12 +67,30 @@ export class StudentInformationComponent implements OnInit {
   }
 
   ngOnInit() {
+    if (this.apiservice.referencenumber) {
+      this.apiservice
+        .getApplicationByReference(
+          `${this.apiservice.userID}/${this.apiservice.complain}/${this.apiservice.referencenumber}`
+        )
+        .toPromise()
+        .then(res => {
+          if (res) {
+            const studentDetails = res.myaap.StudentInformation;
+            this.studentInfor.patchValue({
+              studentName: studentDetails.studentName ? studentDetails.studentName : '',
+              studentSurname: studentDetails.studentSurname ? studentDetails.studentSurname : '',
+              studentNumber: studentDetails.studentNumber ? studentDetails.studentNumber : '',
+              cellphoneNumber: studentDetails.cellphoneNumber ? studentDetails.cellphoneNumber : '',
+              emailAddress: studentDetails.emailAddress ? studentDetails.emailAddress : '',
+            });
+          }
+        });
+    }
   }
 
   onClickSubmit(StudInfo) {
     debugger;
     if (this.studentInfor.valid) {
-      const appInfo = StudInfo.getRawValue();
       this.enableTabs = true;
       this.sendStatus();
       const newApp: {} = {
@@ -118,23 +136,24 @@ export class StudentInformationComponent implements OnInit {
           newApp['StudentInformation'] = StudInfo.getRawValue();
           this.session.sessionApplication = {
             identifier: this.apiservice.userID,
-            systemName: this.apiservice.appName,
+            systemName: this.apiservice.complain,
             searchcode: newApp['StudentInformation']['studentNumber'],
             status: 'Draft',
             myaap: newApp
           };
-          this.apiservice
-            .createApplication(this.session.sessionApplication)
-            .toPromise()
-            .then(resp => {
-              this.apiservice.referencenumber = resp['referencenumber'];
-              this.session.sessionApplication = JSON.parse(
-                JSON.stringify(resp)
-              );
-            })
-            .catch(error => {
-              return Promise.reject(error);
-            });
+          // this.apiservice
+          //   .createApplication(this.session.sessionApplication)
+          //   .toPromise()
+          //   .then(resp => {
+          //     this.apiservice.referencenumber = resp['referencenumber'];
+          //     this.session.sessionApplication = JSON.parse(
+          //       JSON.stringify(resp)
+          //     );
+          //   })
+          //   .catch(error => {
+          //     return Promise.reject(error);
+          //   });
+          console.log(this.session.sessionApplication);
         }
       } catch (e) {
         this.dialog.Alert('Error: ' + e);
