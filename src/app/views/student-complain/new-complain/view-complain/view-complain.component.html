@@ -1,12 +1,12 @@
-<form [formGroup]="ReviewForm">
-  <mat-accordion>
-    <mat-expansion-panel>
-      <mat-expansion-panel-header>
-        <h4>My Information</h4>
-      </mat-expansion-panel-header>
-      <br>
-      <div class="form-row">
-        
+<div class="my-container white-board">
+  <form [formGroup]="complainInfor">
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <h4>My Information</h4>
+        </mat-expansion-panel-header>
+        <br>
+        <div class="form-row">
           <mat-form-field class="example-full-width">
             <input matInput name="studentNumber" maxlength="50" type="text" placeholder="Student Number"
               formControlName="studentNumber">
@@ -16,65 +16,66 @@
             <input matInput name="studentName" maxlength="50" type="text" placeholder="Student Name"
               formControlName="studentName">
           </mat-form-field>
-    
+
           <mat-form-field class="example-full-width">
-            <input matInput name="studentSurname" maxlength="50" type="text"
-              placeholder="Student Surname" formControlName="studentSurname">
+            <input matInput name="studentSurname" maxlength="50" type="text" placeholder="Student Surname"
+              formControlName="studentSurname">
           </mat-form-field>
 
           <mat-form-field class="example-full-width">
-            <input matInput name="cellphoneNumber" maxlength="50" type="text"
-              placeholder="Cellphone Number" formControlName="cellphoneNumber">
+            <input matInput name="cellphoneNumber" maxlength="50" type="text" placeholder="Cellphone Number"
+              formControlName="cellphoneNumber">
           </mat-form-field>
 
           <mat-form-field class="example-full-width">
-            <input matInput name="emailAddress" maxlength="50" type="text" 
-            placeholder="emailAddress" formControlName="emailAddress">
+            <input matInput name="emailAddress" maxlength="50" type="text" placeholder="emailAddress"
+              formControlName="emailAddress">
           </mat-form-field>
 
-      </div>
-    </mat-expansion-panel>
+        </div>
+      </mat-expansion-panel>
 
-    <mat-expansion-panel>
-      <mat-expansion-panel-header>
-        <h4>Complain Information</h4>
-      </mat-expansion-panel-header>
-      <br>
-      <div class="form-row">
-        
-        <mat-form-field class="example-full-width">
-          <input matInput name="resNumber" maxlength="50" type="text" placeholder="Residence Number"
-            formControlName="resNumber">
-        </mat-form-field>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <h4>Complain Information</h4>
+        </mat-expansion-panel-header>
+        <br>
+        <div class="form-row">
+          <mat-form-field class="example-full-width">
+            <input matInput name="resNumber" maxlength="50" type="text" placeholder="Residence Number"
+              formControlName="resNumber">
+          </mat-form-field>
 
-        <mat-form-field class="example-full-width">
-          <input matInput name="residenceFloor" maxlength="50" type="text" placeholder="Fesidence Floor"
-            formControlName="residenceFloor">
-        </mat-form-field>
-  
-        <mat-form-field class="example-full-width">
-          <input matInput name="roomNumber" maxlength="50" type="text"
-            placeholder="Room Number" formControlName="roomNumber">
-        </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <input matInput name="residenceFloor" maxlength="50" type="text" placeholder="Fesidence Floor"
+              formControlName="residenceFloor">
+          </mat-form-field>
 
-        <mat-form-field class="example-full-width">
-          <input matInput name="comaplainType" maxlength="50" type="text"
-            placeholder="Comaplain Type" formControlName="comaplainType">
-        </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <input matInput name="roomNumber" maxlength="50" type="text" placeholder="Room Number"
+              formControlName="roomNumber">
+          </mat-form-field>
 
-        <mat-form-field class="example-full-width">
-          <mat-label>Complain Details</mat-label>
-          <textarea rows="3" matInput placeholder="Complain Details" id='complainDetails'
-            formControlName="complainDetails"></textarea>
-        </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <input matInput name="comaplainType" maxlength="50" type="text" placeholder="Comaplain Type"
+              formControlName="comaplainType">
+          </mat-form-field>
 
-    </div>
+          <mat-form-field class="example-full-width">
+            <mat-label>Complain Details</mat-label>
+            <textarea rows="3" matInput placeholder="Complain Details" id='complainDetails'
+              formControlName="complainDetails"></textarea>
+          </mat-form-field>
 
-    </mat-expansion-panel>
-
-  </mat-accordion>
-</form>
-<br>
-<div class="example-button-row float-right">
-  <button class="btn" mat-raised-button color="primary" (click)="manageApplications()">Close</button>
+        </div>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </form>
+  <br>
+  <div class="example-button-row float-right">
+    <button class="btn" mat-raised-button color="primary" (click)="manageComplain()">Back</button>
+  </div>
+  <br>
+  <br>
+  <br>
 </div>
