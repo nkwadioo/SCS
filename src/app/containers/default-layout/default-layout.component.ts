@@ -39,9 +39,9 @@ export class DefaultLayoutComponent implements OnDestroy, OnInit {
     const token = sessionStorage.getItem('token');
     const candidate = this.candidates.find((s) => ((token) === s.token.toString()));
     this.session.loggedUser = candidate;
-    const portalData = this.session.loggedUser;
-    this.loggedUser = 'Welcome, ' + portalData['name'] + ' ' + portalData['surname'] + ' ';
-    this.apiservice.userID = portalData['idNumber'];
+    const logUser = this.session.loggedUser;
+    this.loggedUser = 'Welcome, ' + logUser['name'] + ' ' + logUser['surname'] + ' ';
+    this.apiservice.userID = logUser['idNumber'];
 
     //  if (this.apiservice.authenticated()) {
     //   this.apiservice.getProfile().toPromise().then(data => {

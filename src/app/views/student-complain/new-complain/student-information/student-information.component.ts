@@ -20,7 +20,7 @@ export class StudentInformationComponent implements OnInit {
 
   enableTabs = false;
   studentInfor: FormGroup;
-  constructor(    public router: Router,
+  constructor(public router: Router,
     fb: FormBuilder,
     private apiservice: ApiService,
     public rgx: RGXService,
@@ -28,12 +28,12 @@ export class StudentInformationComponent implements OnInit {
     private dialog: DialogsService,
     public refData: ReferenceDataService,
     private loadingService: LoadingService,
-    public SchedulingServices: SchedulingService) { 
+    public SchedulingServices: SchedulingService) {
     this.studentInfor = fb.group({
       studentName: ['', Validators.compose([
-          Validators.required,
-          Validators.pattern(this.rgx.alphabetic().exp)
-        ])
+        Validators.required,
+        Validators.pattern(this.rgx.alphabetic().exp)
+      ])
       ],
       studentSurname: [
         '',
@@ -67,6 +67,18 @@ export class StudentInformationComponent implements OnInit {
   }
 
   ngOnInit() {
+    debugger;
+    this.studentInfor.get('studentName').disable({ emitEvent: false });
+    this.studentInfor.get('studentSurname').disable({ emitEvent: false });
+    this.studentInfor.get('cellphoneNumber').disable({ emitEvent: false });
+    this.studentInfor.get('emailAddress').disable({ emitEvent: false });
+
+    const logUser = this.session.loggedUser;
+    this.studentInfor.controls.studentName.setValue(logUser['name']);
+    this.studentInfor.controls.studentSurname.setValue(logUser['surname']);
+    this.studentInfor.controls.cellphoneNumber.setValue(logUser['cellphoneNumber']);
+    this.studentInfor.controls.emailAddress.setValue(logUser['email']);
+
     if (this.apiservice.referencenumber) {
       this.apiservice
         .getApplicationByReference(
@@ -141,18 +153,18 @@ export class StudentInformationComponent implements OnInit {
             status: 'Draft',
             myaap: newApp
           };
-          // this.apiservice
-          //   .createApplication(this.session.sessionApplication)
-          //   .toPromise()
-          //   .then(resp => {
-          //     this.apiservice.referencenumber = resp['referencenumber'];
-          //     this.session.sessionApplication = JSON.parse(
-          //       JSON.stringify(resp)
-          //     );
-          //   })
-          //   .catch(error => {
-          //     return Promise.reject(error);
-          //   });
+          this.apiservice
+            .createApplication(this.session.sessionApplication)
+            .toPromise()
+            .then(resp => {
+              this.apiservice.referencenumber = resp['referencenumber'];
+              this.session.sessionApplication = JSON.parse(
+                JSON.stringify(resp)
+              );
+            })
+            .catch(error => {
+              return Promise.reject(error);
+            });
           console.log(this.session.sessionApplication);
         }
       } catch (e) {

@@ -12,15 +12,15 @@ import { SessionsService } from '../../../services/sessions.service';
 import { DialogsService } from '../../../shared/dialogs.service';
 
 export interface COMPLAINTS {
-  id: String | number;
   referenceNo: String;
   name: String;
   surname: String;
   dateCreated: String;
   studentNo: String;
   status: String;
-  preview: String;
-  edit: String;
+  View: String;
+  Edit: String;
+  Delete: String;
 }
 
 @Component({
@@ -99,15 +99,15 @@ db: any;
             if (element.status !== 'Deleted') {
               const dateCreated = this.refData.formatDate(element.dateCreated);
               this.complainData.push({
-                id: '',
                 referenceNo: element.referencenumber,
                 studentNo: appInfo.studentNumber,
                 name: appInfo.studentName,
                 surname: appInfo.studentSurname,
                 dateCreated: dateCreated,
                 status: element.status,
-                preview: '',
-                edit: '',
+                View: '',
+                Edit: '',
+                Delete: ''
               }
               );
             }
@@ -173,8 +173,8 @@ db: any;
     this.router.navigate(['ttc-accreditation/view-application']);
   }
   setDisplayedColumns() {
-    this.displayedColumns = ['id', 'referenceNo', 'name', 'surname',
-    'dateCreated', 'studentNo', 'status', 'preview', 'edit'
+    this.displayedColumns = ['referenceNo', 'name', 'surname',
+    'dateCreated', 'studentNo', 'status', 'View', 'Edit', 'Delete'
   ];
   }
 
