@@ -2,14 +2,26 @@
 
 <form [formGroup]="complainInfor">
   <h4>Complain Information</h4>
+  <br>
   <div class="form-row">
     <mat-form-field class="example-full-width">
       <mat-label>Residence Number</mat-label>
-      <input matInput name="resNumber" ng-model="complainInfor.resNumber" type="text" maxlength=50
-        placeholder="Res Number" formControlName="resNumber">
-      <mat-error *ngIf="complainInfor['controls']?.resNumber.errors?.required">
-        This field is required
-      </mat-error>
+      <mat-select name="resNumber" formControlName="resNumber">
+        <mat-option *ngFor="let value of ResidenceNumber" [value]="value.id">
+          {{value.Res}}
+        </mat-option>
+      </mat-select>
+      <mat-error>This field is required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Residence Floor</mat-label>
+      <mat-select name="residenceFloor" formControlName="residenceFloor">
+        <mat-option *ngFor="let value of ResidenceFloor" [value]="value.id">
+          {{value.Floor}}
+        </mat-option>
+      </mat-select>
+      <mat-error>This field is required</mat-error>
     </mat-form-field>
 
     <mat-form-field class="example-full-width">
@@ -48,7 +60,8 @@
   <br>
   <div class="example-button-row float-right">
     <button class="btn" mat-raised-button matStepperPrevious color="primary">Back</button>
-    <button type="submit" class="btn" mat-raised-button color="primary"> Submit Complain</button>
+    <button type="submit" class="btn" mat-raised-button color="primary" [disabled]="complainInfor.invalid"
+      (click)="onClickSubmit(complainInfor)"> Submit Complain</button>
   </div>
 </form>
 <!-- </div> -->

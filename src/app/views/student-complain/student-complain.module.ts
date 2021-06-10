@@ -8,10 +8,11 @@ import { MatAutocompleteModule, MatButtonModule, MatCheckboxModule, MatDatepicke
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { StudentInformationComponent } from './new-complain/student-information/student-information.component';
 import { ComplainInformationComponent } from './new-complain/complain-information/complain-information.component';
+import { ViewComplainComponent } from './new-complain/view-complain/view-complain.component';
 
 
 @NgModule({
-  declarations: [ManageComplainComponent, NewComplainComponent, StudentInformationComponent, ComplainInformationComponent],
+  declarations: [ManageComplainComponent, NewComplainComponent, StudentInformationComponent, ComplainInformationComponent, ViewComplainComponent],
   imports: [
     CommonModule,
     StudentComplainRoutingModule,

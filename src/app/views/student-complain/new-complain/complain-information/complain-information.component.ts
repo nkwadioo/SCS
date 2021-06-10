@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ApiService } from '../../../../services/api.service';
 import { ApplicationService } from '../../../../services/application.service';
 import { ReferenceDataService } from '../../../../services/ReferenceDataService';
 import { RGXService } from '../../../../services/rgx.service';
 import { SessionsService } from '../../../../services/sessions.service';
+import { DialogsService } from '../../../../shared/dialogs.service';
 
 @Component({
   selector: 'app-complain-information',
@@ -14,15 +16,20 @@ import { SessionsService } from '../../../../services/sessions.service';
 export class ComplainInformationComponent implements OnInit {
 
   complainInfor: FormGroup;
+
+  ResidenceNumber = this.refData.ResidenceNumber;
+  ResidenceFloor = this.refData.ResidenceFloor;
+
   constructor( fb: FormBuilder,
     public rgx: RGXService,
+    public router: Router,
     public refData: ReferenceDataService,
-    private appsServices: ApplicationService,
+    private dialogs: DialogsService,
     private apiservice: ApiService,
     private session: SessionsService,) { 
     this.complainInfor = fb.group({
       resNumber: ['', Validators.required],
-      // picture: ['', Validators.required],
+      residenceFloor: ['', Validators.required],
       roomNumber: ['', Validators.required],
       comaplainType: ['', Validators.required],
       complainDetails: ['', Validators.required],
@@ -39,13 +46,19 @@ export class ComplainInformationComponent implements OnInit {
       .toPromise()
       .then(res => {
         if (res) {
+          res.myaap['status'] = 'Submitted';
+          res['status'] = 'Submitted';
           res.myaap['ComplainInformation'] = complanInformation.getRawValue();
           // Update candidate applications
           this.apiservice
             .updateApplication(res)
             .toPromise()
             .then(resp => {
-              this.session.sessionApplication = resp;
+              if(resp){
+                this.session.sessionApplication = resp;
+                this.dialogs.Alert('Your Complain is Successfully Submitted');
+                this.router.navigate(['/student-complain/Manage']);
+              }
             });
         }
       });

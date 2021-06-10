@@ -27,11 +27,6 @@ export class ReferenceDataService {
       'cellphoneNumber': '0835962404'
     },
     {
-      'token': 11, 'name': 'Sam', 'surname': 'Sesoko', 'maidenName': '', 'initials': 'D', 'nationality': 'South African',
-      'idNumber': '7806135800087', 'dateOfBirth': '1995/04/11', 'email': 'Sam.Sesoko@sita.co.za',
-      'cellphoneNumber': '0835962404'
-    },
-    {
       'token': 2, 'name': 'Jack', 'surname': 'Methews', 'maidenName': '', 'initials': 'D', 'nationality': 'South African',
       'idNumber': '8110133800083', 'dateOfBirth': '1995/04/11', 'email': 'Jack.Methews@sita.co.za',
       'cellphoneNumber': '0835962404'
@@ -71,97 +66,39 @@ export class ReferenceDataService {
       'idNumber': '7908204800087', 'dateOfBirth': '1995/04/11', 'email': 'Paulina.Grootboom@sita.co.za',
       'cellphoneNumber': '0835962404'
     },
-    {
-      'token': 12, 'name': 'Nicky', 'surname': 'Pakise', 'maidenName': '', 'initials': 'D', 'nationality': 'South African',
-      'idNumber': '8904115479089', 'dateOfBirth': '1995/04/11', 'email': 'Jacob.Tlale@sita.co.za',
-      'cellphoneNumber': '0835962404'
-    },
-    {
-      'token': 13, 'name': 'Thabang', 'surname': 'Matlala', 'maidenName': '', 'initials': 'D', 'nationality': 'South African',
-      'idNumber': '9405115479089', 'dateOfBirth': '1995/04/11', 'email': 'Solly.Mahanjane@sita.co.za',
-      'cellphoneNumber': '0835962404'
-    },
-    {
-      'token': 14, 'name': 'Jacob', 'surname': 'Mohalane', 'maidenName': '', 'initials': 'D', 'nationality': 'South African',
-      'idNumber': '9509134800086', 'dateOfBirth': '1995/04/11', 'email': 'Dan.Mkhabela@sita.co.za',
-      'cellphoneNumber': '0835962404'
-    },
-    {
-      'token': 15, 'name': 'Jack', 'surname': 'Mabaso', 'maidenName': '', 'initials': 'D', 'nationality': 'South African',
-      'idNumber': '6004115479089', 'dateOfBirth': '1995/04/11', 'email': 'Joshua.Mthimkhulu@sita.co.za',
-      'cellphoneNumber': '0835962404'
-    },
-    {
-      'token': 16, 'name': 'John', 'surname': 'Mohalane', 'maidenName': '', 'initials': 'D', 'nationality': 'South African',
-      'idNumber': '5904115479089', 'dateOfBirth': '1995/04/11', 'email': 'Mary.Albert@sita.co.za',
-      'cellphoneNumber': '0835962404'
-    },
-    // { For CIT
-    //   'token': 16, 'name': 'John', 'surname': 'Mohalane', 'maidenName': '', 'initials': 'D', 'nationality': 'South African',
-    //   'idNumber': '5904115479089', 'dateOfBirth': '1995/04/11', 'email': 'Mary.Albert@sita.co.za',
-    //   'cellphoneNumber': '0835962404'
-    // },
+  ];
 
-    {
-      'token': 17, 'name': 'Sello', 'surname': 'Maake', 'maidenName': '', 'initials': 'D', 'nationality': 'South African',
-      'idNumber': '7804115479089', 'dateOfBirth': '1995/04/11', 'email': 'Paulina.Grootboom@sita.co.za',
-      'cellphoneNumber': '0835962404'
-    },
-    {
-      'token': 18, 'name': 'Noah', 'surname': 'Makakula', 'maidenName': '', 'initials': 'N', 'nationality': 'South African',
-      'idNumber': '7707085800087', 'dateOfBirth': '1977/07/08', 'email': 'Noah.Makakula@sita.co.za',
-      'cellphoneNumber': '0735862404'
-    },
-    {
-      'token': 19, 'name': 'Elijah', 'surname': 'Jones', 'maidenName': '', 'initials': 'E', 'nationality': 'South African',
-      'idNumber': '8407055800089', 'dateOfBirth': '1984/04/11', 'email': 'Elijah.Jones@sita.co.za',
-      'cellphoneNumber': '0833962404'
-    },
-    {
-      'token': 20, 'name': 'Benjamin', 'surname': 'Miller', 'maidenName': '', 'initials': 'B', 'nationality': 'South African',
-      'idNumber': '8603055800083', 'dateOfBirth': '1986/04/11', 'email': 'Benjamin.Miller@sita.co.za',
-      'cellphoneNumber': '0645962404'
-    },
-    {
-      'token': 21, 'name': 'Jane', 'surname': 'Walker', 'maidenName': '', 'initials': 'J', 'nationality': 'South African',
-      'idNumber': '8202054800085', 'dateOfBirth': '1982/02/05', 'email': 'Jane.Walker@sita.co.za',
-      'cellphoneNumber': '0623458704'
-    },
-    {
-      'token': 22, 'name': 'Harriet', 'surname': 'Harris', 'maidenName': '', 'initials': 'H', 'nationality': 'South African',
-      'idNumber': '9010104800081', 'dateOfBirth': '1990/10/10', 'email': 'Harriet.Harris@sita.co.za',
-      'cellphoneNumber': '0725962404'
-    },
-    {
-      'token': 23, 'name': 'Moses', 'surname': 'Kgaphola', 'maidenName': '', 'initials': 'M', 'nationality': 'South African',
-      'idNumber': '9001014800089', 'dateOfBirth': '1990/01/01', 'email': 'Moseskgaphola@gmail.com',
-      'cellphoneNumber': '0725772502'
-    },
-    {
-      'token': 24, 'name': 'Lerato', 'surname': 'Phala', 'maidenName': '', 'initials': 'L', 'nationality': 'South African',
-      'idNumber': '9010144800083', 'dateOfBirth': '1990/10/14', 'email': 'Leratophala@gmail.com',
-      'cellphoneNumber': '0825672502'
-    },
-    {
-      'token': 25, 'name': 'Johannes', 'surname': 'jacob', 'maidenName': '', 'initials': 'J', 'nationality': 'South African',
-      'idNumber': '8710045507076', 'dateOfBirth': '1987/10/04', 'email': 'Johannesjacob@gmail.com',
-      'cellphoneNumber': '0835652002'
-    },
-    {
-      'token': 26, 'name': 'David', 'surname': 'Booysen', 'maidenName': '', 'initials': 'D', 'nationality': 'South African',
-      'idNumber': '2501014800085', 'dateOfBirth': '1995/10/04', 'email': 'David.Booysen@gmail.com',
-      'cellphoneNumber': '0835652002'
-    },
-    {
-      'token': 27, 'name': 'Thabiso', 'surname': 'Makgolane', 'maidenName': '', 'initials': 'T', 'nationality': 'South African',
-      'idNumber': '9110045508086', 'dateOfBirth': '1991/10/04', 'email': 'Thabiso@gmail.com',
-      'cellphoneNumber': '0835652002'
-    },
-    {
-      'token': 28, 'name': 'kgadi', 'surname': 'Mathebula', 'maidenName': '', 'initials': 'K', 'nationality': 'South African',
-      'idNumber': '8810045508086', 'dateOfBirth': '1988/10/04', 'email': 'kgadi@gmail.com',
-      'cellphoneNumber': '0825652002'
-    },
+  ResidenceNumber = [
+    { id: 1, Res: 'M1' },
+    { id: 2, Res: 'M2' },
+    { id: 3, Res: 'M3' },
+    { id: 4, Res: 'M4' },
+    { id: 5, Res: 'M5' },
+    { id: 6, Res: 'M6' },
+    { id: 7, Res: 'M7' },
+    { id: 8, Res: 'M8' },
+    { id: 9, Res: 'M9' },
+    { id: 10, Res: 'M10' },
+    { id: 11, Res: 'M11' },
+    { id: 12, Res: 'M12' },
+    { id: 13, Res: 'M13' },
+    { id: 14, Res: 'M14' },
+    { id: 15, Res: 'M15' },
+    { id: 16, Res: 'M16' },
+    { id: 17, Res: 'M17' },
+    { id: 18, Res: 'M18' },
+    { id: 19, Res: 'M19' },
+    { id: 20, Res: 'M20' },
+  ];
+
+  ResidenceFloor = [
+    { id: 1, Floor: 'Ground Floor' },
+    { id: 2, Floor: 'First Floor' },
+    { id: 3, Floor: 'Second Floor' },
+    { id: 4, Floor: 'Third Floor' },
+    { id: 5, Floor: 'Firth Floor' },
+    { id: 6, Floor: 'Sixth Floor' },
+    { id: 7, Floor: 'Seventh Floor' },
   ];
 
   public getLookup(lookup: string) {

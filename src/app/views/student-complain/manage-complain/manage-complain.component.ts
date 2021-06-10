@@ -12,7 +12,7 @@ import { SessionsService } from '../../../services/sessions.service';
 import { DialogsService } from '../../../shared/dialogs.service';
 
 export interface COMPLAINTS {
-  referenceNo: String;
+  referenceNo: String | number;
   name: String;
   surname: String;
   dateCreated: String;
@@ -38,7 +38,6 @@ screenHeight: any;
 screenWidth: any;
 @ViewChild(MatSort) sort: MatSort;
 @ViewChild(MatPaginator) paginator: MatPaginator;
-@ViewChild(MatPaginator) paginator2: MatPaginator;
 
 isLargeScreen: any;
 pageSize = 10;
@@ -120,25 +119,29 @@ db: any;
       alert('Error: ' + err);
     }
   }
+
   loadComplain() {
     this.complainData = [];
     this.getComplain().then(data => { });
     const source = this.complainData;
   }
+
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
   editComplain(id: string): void {
+    debugger;
     this.sessions.sessionApplication = this.db.find(
       x => id === x['referencenumber']
     );
     this.apiservice.referencenumber = id;
     // Redirect to trade-application
-    this.router.navigate(['/ttc-accreditation/ttc-application']);
+    this.router.navigate(['/student-complain/Complain']);
   }
 
   deleteComlain(id: string): void {
+    debugger;
     this.dialogs
       .Confirm(
         'This complain cannot be recovered.Do you really want to delete this complain?'
@@ -169,15 +172,15 @@ db: any;
   }
 
   viewComplain(id: string): void {
+    debugger;
     this.apiservice.referencenumber = id;
-    this.router.navigate(['ttc-accreditation/view-application']);
+    this.router.navigate(['/student-complain/View']);
   }
+
   setDisplayedColumns() {
     this.displayedColumns = ['referenceNo', 'name', 'surname',
     'dateCreated', 'studentNo', 'status', 'View', 'Edit', 'Delete'
   ];
   }
-
-
 
 }

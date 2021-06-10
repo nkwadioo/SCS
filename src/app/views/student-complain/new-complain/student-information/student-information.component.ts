@@ -116,7 +116,7 @@ export class StudentInformationComponent implements OnInit {
         },
         ComplainInformation: {
           resNumber: null,
-          picture: null,
+          residenceFloor: null,
           roomNumber: null,
           comaplainType: null,
           complainDetails: null,
