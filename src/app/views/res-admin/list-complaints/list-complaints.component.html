@@ -1,0 +1,53 @@
+<div class="white-board">
+  <h4>Complains List</h4>
+
+  <br>
+  <br>
+  <div class="form-row">
+    <div class="col-12">
+      <div class="table-responsive table-fixed">
+        <table mat-table [dataSource]="dataSource" matSort matSortActive="referenceNo" matSortDirection="asc">
+          <ng-container matColumnDef="referenceNo">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Reference No </th>
+            <td mat-cell *matCellDef="let element"> {{element.referencenumber}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="studentNo">
+            <th class="pl-0" mat-header-cell *matHeaderCellDef mat-sort-header> Student No </th>
+            <td mat-cell *matCellDef="let element"> {{element.myaap?.StudentInformation?.studentNumber}} </td>
+          </ng-container>
+          <ng-container matColumnDef="status">
+            <th class="pl-0" mat-header-cell *matHeaderCellDef mat-sort-header> Status </th>
+            <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="action">
+            <th mat-header-cell *matHeaderCellDef> </th>
+            <td mat-cell *matCellDef="let element">
+              <!-- <button class="button-btn text-left p-0 m-0" mat-icon-button color="primary" matTooltip="view a application"
+              (click)="viewComplain(element.referenceNo)">
+                <mat-icon  class="mat-18 btn-view" aria-label="view application">reorder</mat-icon>
+                  View
+              </button> -->
+              <mat-form-field class="m-0 py-2">
+                <mat-label>Action</mat-label>
+                <!-- $event.target.value = '';  appearance="outline"-->
+                <mat-select (selectionChange)="complainsAction($event.source.value, element); $event.source.value = '';">
+                  <mat-option value=""> Select Option</mat-option>
+                  <mat-option value="assign"> Assign</mat-option>
+                  <mat-option value="review"> Review</mat-option>
+                  <mat-option value="resolve"> Resolve</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </td>
+          </ng-container>
+    
+          
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

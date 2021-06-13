@@ -14,48 +14,37 @@ import { MatStepperModule, MatInputModule, MatButtonModule,
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { ModuleResolutionKind } from '../../../../node_modules___/typescript/lib/tsserverlibrary';
 // import { BrowserModule } from '@angular/platform-browser';
+
+const modules = [
+  FlexLayoutModule,
+
+  // BrowserAnimationsModule, BrowserModule,
+  MatStepperModule, MatInputModule, MatButtonModule,
+  MatPaginatorModule, MatSortModule, MatTableModule,
+  MatFormFieldModule, MatMenuModule, MatNativeDateModule,
+  MatDatepickerModule, MatCheckboxModule, MatSelectModule,
+  MatIconModule, MatDialogModule, MatProgressBarModule,
+  MatTooltipModule, MatAutocompleteModule, MatRadioModule,
+  MatExpansionModule, MatSlideToggleModule, MatSnackBarModule,
+
+  ReactiveFormsModule, FormsModule, HttpClientModule, FormsModule,
+
+  MatButtonToggleModule, MatCardModule, MatCheckboxModule,
+  MatChipsModule, MatGridListModule, MatListModule,
+  MatProgressSpinnerModule, MatRadioModule, MatRippleModule,
+  MatSidenavModule, MatSliderModule, MatTabsModule,
+  MatToolbarModule,
+]
 
 @NgModule({
   declarations: [],
   imports: [
-    FlexLayoutModule,
-
-    // BrowserAnimationsModule, BrowserModule,
-    MatStepperModule, MatInputModule, MatButtonModule,
-    MatPaginatorModule, MatSortModule, MatTableModule,
-    MatFormFieldModule, MatMenuModule, MatNativeDateModule,
-    MatDatepickerModule, MatCheckboxModule, MatSelectModule,
-    MatIconModule, MatDialogModule, MatProgressBarModule,
-    MatTooltipModule, MatAutocompleteModule, MatRadioModule,
-    MatExpansionModule, MatSlideToggleModule, MatSnackBarModule,
-
-    ReactiveFormsModule, FormsModule, HttpClientModule, FormsModule,
-
-    MatButtonToggleModule, MatCardModule, MatCheckboxModule,
-    MatChipsModule, MatGridListModule, MatListModule,
-    MatProgressSpinnerModule, MatRadioModule, MatRippleModule,
-    MatSidenavModule, MatSliderModule, MatTabsModule,
-    MatToolbarModule,
+    modules
   ],
   exports: [
-    FlexLayoutModule,
-    // BrowserAnimationsModule, BrowserModule,
-    MatStepperModule, MatInputModule, MatButtonModule,
-    MatPaginatorModule, MatSortModule, MatTableModule,
-    MatFormFieldModule, MatMenuModule, MatNativeDateModule,
-    MatDatepickerModule, MatCheckboxModule, MatSelectModule,
-    MatIconModule, MatDialogModule, MatProgressBarModule,
-    MatTooltipModule, MatAutocompleteModule, MatRadioModule,
-    MatExpansionModule, MatSlideToggleModule, MatSnackBarModule,
-
-    ReactiveFormsModule, FormsModule, HttpClientModule, FormsModule,
-
-    MatButtonToggleModule, MatCardModule, MatCheckboxModule,
-    MatChipsModule, MatGridListModule, MatListModule,
-    MatProgressSpinnerModule, MatRadioModule, MatRippleModule,
-    MatSidenavModule, MatSliderModule, MatTabsModule,
-    MatToolbarModule,
+    modules
   ]
 })
 export class NgMaterialModule { }

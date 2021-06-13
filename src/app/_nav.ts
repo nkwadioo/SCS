@@ -53,6 +53,18 @@ export const navItems: NavData[] = [
       },
     ]
   },
+  {
+    name: 'Res-Admin',
+    url: '/res-admin',
+    icon: 'icon-call-end',
+    children: [
+      {
+        name: 'Complains List',
+        url: '/res-admin/list',
+        icon: 'icon-pencil'
+      },
+    ]
+  }
   // {
   //   name: 'Admin',
   //   url: '/',

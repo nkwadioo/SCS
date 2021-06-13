@@ -1,0 +1,22 @@
+<div class="white-board">
+  <form [formGroup]="studentInfor">
+    <h4>Assign Complain</h4>
+    <br>
+    
+    <h5 class="sub-header">Student Information</h5>
+    <div class="form-row">
+      <mat-form-field class="w-100 col-xs-6 col-md-3">
+        <mat-label>Student Number</mat-label>
+        <input matInput name="studentNumber" ng-model="studentInfor.studentNumber" type="text" maxlength=9
+          placeholder="Student Number" formControlName="studentNumber" [disabled]="true">
+        <mat-error *ngIf="studentInfor['controls']?.studentNumber.errors?.required">
+          This field is required
+        </mat-error>
+        <mat-error *ngIf="studentInfor['controls']?.studentNumber.errors?.pattern">
+          {{rgx.numeric().msg}}
+        </mat-error>
+      </mat-form-field>
+    </div>
+  </form>
+  
+</div>

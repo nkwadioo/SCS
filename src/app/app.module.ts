@@ -59,6 +59,7 @@ import { ContinueComponent } from './shared/continue/continue.component';
 import {SlideshowModule} from 'ng-simple-slideshow';
 import { LoadingComponent } from './loading/loading.component';
 import { LayoutModule } from '@angular/cdk/layout';
+import { ResAdminModule } from './views/res-admin/res-admin.module';
 
 // import { DialogFormComponent } from './dialog/dialog-form/dialog-form.component';
 
@@ -130,6 +131,7 @@ import { LayoutModule } from '@angular/cdk/layout';
       MatProgressBarModule,
       MatDialogModule,
       SlideshowModule,
+      ResAdminModule,
       // StorageServiceModule
 
   ],

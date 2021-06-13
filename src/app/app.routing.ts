@@ -39,6 +39,10 @@ export const routes: Routes = [
         loadChildren: './views/student-complain/student-complain.module#StudentComplainModule'
       },
       {
+        path: 'res-admin',
+        loadChildren: './views/res-admin/res-admin.module#ResAdminModule'
+      },
+      {
         path: 'dashboard',
         loadChildren: './views/dashboard/dashboard.module#DashboardModule'
       }
