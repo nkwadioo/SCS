@@ -47,7 +47,7 @@ export class ListComplaintsComponent implements OnInit, AfterViewInit {
   complainsAction(action, complain) {
     console.log(action, complain)
     this.sessions.sessionApplication = complain;
-    this.router.navigate([`/res-admin/${action}`]);
+    this.router.navigate([`/res-admin/${action}/${complain.referencenumber}`]);
   }
   
   async getComplain() {

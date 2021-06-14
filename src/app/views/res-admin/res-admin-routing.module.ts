@@ -22,7 +22,7 @@ const routes: Routes = [
         }
       },
       {
-        path: 'assign',
+        path: 'assign/:id',
         component: AssignComponent,
         data: {
           title: 'Complain Assignment'

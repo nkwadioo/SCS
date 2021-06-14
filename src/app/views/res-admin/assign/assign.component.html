@@ -1,8 +1,14 @@
 <div class="white-board">
+  <span class="d-flex justify-content-between align-items-baseline mb-2">
+    <h4>
+      Assign Complain
+    </h4>
+    <div class="text-right">
+      <button mat-stroked-button color="accent">Assign To</button>
+    </div>
+  </span>
+  
   <form [formGroup]="studentInfor">
-    <h4>Assign Complain</h4>
-    <br>
-    
     <h5 class="sub-header">Student Information</h5>
     <div class="form-row">
       <mat-form-field class="w-100 col-xs-6 col-md-3">
@@ -16,7 +22,112 @@
           {{rgx.numeric().msg}}
         </mat-error>
       </mat-form-field>
+      <mat-form-field class="w-100 col-xs-6 col-md-3">
+        <mat-label>Student Name</mat-label>
+        <input matInput name="studentNumber" ng-model="studentInfor.studentNumber" type="text" maxlength=9
+          placeholder="Student Number" formControlName="studentNumber" [disabled]="true">
+        <mat-error *ngIf="studentInfor['controls']?.studentNumber.errors?.required">
+          This field is required
+        </mat-error>
+        <mat-error *ngIf="studentInfor['controls']?.studentNumber.errors?.pattern">
+          {{rgx.numeric().msg}}
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="w-100 col-xs-6 col-md-3">
+        <mat-label>Student Surname</mat-label>
+        <input matInput name="studentSurname" ng-model="studentInfor.studentSurname" type="text" maxlength=50
+          placeholder="Student Surname" formControlName="studentSurname">
+        <mat-error *ngIf="studentInfor['controls']?.studentSurname.errors?.required">
+          This field is required
+        </mat-error>
+        <mat-error *ngIf="studentInfor['controls']?.studentSurname.errors?.pattern">
+          {{rgx.alphabetic().msg}}
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="w-100 col-xs-6 col-md-3">
+        <mat-label>Student Cellphone Number</mat-label>
+        <input matInput name="cellphoneNumber" ng-model="studentInfor.cellphoneNumber" type="text" maxlength=10
+          placeholder="cellphone Number" formControlName="cellphoneNumber">
+        <mat-error *ngIf="studentInfor['controls']?.cellphoneNumber.errors?.required">
+          This field is required
+        </mat-error>
+        <mat-error *ngIf="studentInfor['controls']?.cellphoneNumber.errors?.pattern">
+          {{rgx.tel().msg}}
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="w-100 col-xs-6 col-md-3">
+        <mat-label>Student Email Address</mat-label>
+        <input matInput name="emailAddress" ng-model="studentInfor.emailAddress" type="text" maxlength=50
+          placeholder="Email Address" formControlName="emailAddress">
+        <mat-error *ngIf="studentInfor['controls']?.emailAddress.errors?.required">
+          This field is required
+        </mat-error>
+        <mat-error *ngIf="studentInfor['controls']?.emailAddress.errors?.pattern">
+          {{rgx.email().msg}}
+        </mat-error>
+      </mat-form-field>
     </div>
   </form>
-  
+  <form [formGroup]="complainInfor">
+    <h5 class="sub-header">Accommodation Issue</h5>
+    <div class="form-row">
+      <mat-form-field  class="w-100 col-xs-6 col-md-3">
+        <mat-label>Residence Number</mat-label>
+        <mat-select name="resNumber" formControlName="resNumber">
+          <mat-option *ngFor="let value of refData.ResidenceNumber" [value]="value.id">
+            {{value.Res}}
+          </mat-option>
+        </mat-select>
+        <mat-error>This field is required</mat-error>
+      </mat-form-field>
+
+      <mat-form-field  class="w-100 col-xs-6 col-md-3">
+        <mat-label>Residence Floor</mat-label>
+        <mat-select name="residenceFloor" formControlName="residenceFloor">
+          <mat-option *ngFor="let value of refData.ResidenceFloor" [value]="value.id">
+            {{value.Floor}}
+          </mat-option>
+        </mat-select>
+        <mat-error>This field is required</mat-error>
+      </mat-form-field>
+
+      <mat-form-field  class="w-100 col-xs-6 col-md-3">
+        <mat-label>Room Number</mat-label>
+        <input matInput name="roomNumber" ng-model="complainInfor.roomNumber" type="text" maxlength=50
+          placeholder="Room Number" formControlName="roomNumber">
+        <mat-error *ngIf="complainInfor['controls']?.roomNumber.errors?.required">
+          This field is required
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field  class="w-100 col-xs-6 col-md-3">
+        <mat-label>Comaplain Type</mat-label>
+        <input matInput name="comaplainType" ng-model="complainInfor.comaplainType" type="text" maxlength=50
+          placeholder="Comaplain Type" formControlName="comaplainType">
+        <mat-error *ngIf="complainInfor['controls']?.comaplainType.errors?.required">
+          This field is required
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field  class="w-100 col-12">
+        <mat-label>Complain Details</mat-label>
+        <textarea rows="3" matInput placeholder="Complain Details" id='complainDetails'
+          formControlName="complainDetails"></textarea>
+        <mat-error *ngIf="complainInfor['controls']?.complainDetails.errors?.required">
+          This field is required
+        </mat-error>
+      </mat-form-field>
+
+      <!-- <label class="image-upload-container btn btn-bwm">
+        <span>Attach Image</span>
+        <input #imageInput type="file" accept="image/*">
+      </label> -->
+      <br>
+    </div>
+  </form>
+  <div class="col-12 p-0 text-right d-block">
+    <button class="btn" mat-raised-button color="primary" [routerLink]="['/res-admin/list']"  >Back</button>
+  </div>
+
+
 </div>
